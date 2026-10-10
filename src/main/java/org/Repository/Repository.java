@@ -1,4 +1,4 @@
-package Repository;
+package org.Repository;
 import org.Model.*;
 
 public class Repository implements IRepository{
@@ -10,6 +10,15 @@ public class Repository implements IRepository{
         this.arr = new IEntity[size];
         this.size = size;
         this.current = 0;
+    }
+
+    public void generateData() {
+        add(new Car(1, "Skoda Octavia", 500));
+        add(new Car(2, "Volkswagen Golf", 650));
+        add(new Truck(3, "Volvo FH16", 2300));
+        add(new Truck(4, "Scania R450", 2100));
+        add(new Motorcycle(5, "Yamaha MT-07", 400));
+        add(new Motorcycle(6, "Honda CB500F", 350));
     }
 
     private void resize(){
