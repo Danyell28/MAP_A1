@@ -39,12 +39,14 @@ public class UI {
 
         System.out.println("Enter the id of the entity: ");
         Integer id = new Integer(sc.nextInt());
+        sc.nextLine();
 
         System.out.println("Enter the name of the entity: ");
-        String name = sc.next();
+        String name = sc.nextLine();
 
         System.out.println("Enter the repair cost of the entity: ");
         Integer repairCost = new Integer(sc.nextInt());
+        sc.nextLine();
 
         try{
             this.controller.add(type,id,name,repairCost);
@@ -83,6 +85,7 @@ public class UI {
             this.printMenu();
             System.out.print(" -> ");
             option = sc.nextInt();
+            sc.nextLine();
             switch(option){
                 case 0:
                     break;

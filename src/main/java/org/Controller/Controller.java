@@ -41,11 +41,11 @@ public class Controller {
 
     public void add(String type, Integer id, String name, Integer repairCost){
         IEntity el;
-        if ( type == "Car")
+        if ( type.equals("Car"))
             el = new Car(id,name,repairCost);
-        else if( type == "Truck")
+        else if( type.equals("Truck"))
             el = new Truck(id,name,repairCost);
-        else if( type == "Motorcycle")
+        else if( type.equals("Motorcycle"))
             el = new Motorcycle(id,name,repairCost);
         else
             throw new RuntimeException("Invalid entity type. Try again!");

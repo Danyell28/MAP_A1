@@ -33,7 +33,7 @@ public class Repository implements IRepository{
         if ( this.current == this.size )
             resize();
         for( int i=0; i<current; i++){
-            if(el.getId() == this.arr[i].getId())
+            if(el.getId().equals(this.arr[i].getId()) )
                 throw new RuntimeException("An element with the given id already exists!");
         }
         this.arr[current++] = el;
@@ -41,9 +41,10 @@ public class Repository implements IRepository{
 
     public void removeEntity( Integer id){
         for(int i=0;i<current;i++){
-            if(this.arr[id].getId() == id){
+            if(this.arr[i].getId().equals(id)){
                 for(int j=i;j<current-1;j++)
                     this.arr[j] = this.arr[j+1];
+                this.arr[current - 1] = null;
                 current--;
                 return;
             }
